@@ -9,7 +9,7 @@ export default function Home() {
 const fetchData = async () => {
   try {
     const res = await axios.get("/api/products");
-    setProducts(res.data.data.products);
+    setProducts(res.data.products);
   } catch (error) {
     console.log(error)
   } 
@@ -53,14 +53,14 @@ const fetchData = async () => {
           <tbody>
             {products.map((p, i) => (
               <tr key={p._id}>
-                <td className="text-gray-500">{i + 1}</td>
-                <td className="text-gray-500">{p.name}</td>
-                <td className="text-gray-500">{p.price}</td>
-                <td className="text-gray-500">{p.category}</td>
-                <td>
+                <td className="text-gray-500 text-center">{i + 1}</td>
+                <td className="text-gray-500 text-center">{p.name}</td>
+                <td className="text-gray-500 text-center">{p.price}</td>
+                <td className="text-gray-500 text-center">{p.category}</td>
+                <td className="text-center gap-2">
                   <Link 
                   href={`/update/${p._id}`} 
-                  className='bg-blue-500 hover:bg-blue-600 px-3 py-1 rounded-md text-white'>Edit</Link>
+                  className='bg-blue-500 hover:bg-blue-600 px-3 py-2 rounded-md text-white'>Edit</Link>
                   <button 
                   onClick={() => handleDelete(p._id)} 
                   className='bg-red-500 hover:bg-red-600 px-3 py-1 rounded-md text-white'>Delete</button>
