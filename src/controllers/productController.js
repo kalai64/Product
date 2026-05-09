@@ -6,8 +6,7 @@ const getProducts = async () => {
     await connectDB();
 
     const products = await productSchema.find({});
-    
-
+  
     return {
       success: true,
       message: "Fetched products successfully",
