@@ -20,6 +20,8 @@ const getProducts = async () => {
   }
 };
 
+
+
 const addProduct = async (body) => {
   try {
     await connectDB();
